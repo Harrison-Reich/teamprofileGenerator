@@ -9,10 +9,31 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const { FSEventsWatcher } = require("sane");
 
+// using inquirer to gather information about the development team members
+let teamMembers = []
 
-// Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
+const add = () => {
+  inquirer.prompt([
+    {
+      name: 'add'
+      type: 'confirm'
+      message: 'Would you like to create another    employee profile?'
+  };
+]);
+    .then(data => {
+      if(data.add === true) {
+        createEmployee()
+      } else {
+        const team = render(teamMembers)
+        render(teamMembers)
+        fse.outputFile('output.team.html', team, err => {
+          if (err) {console.log(err)}
+        });
+      };
+    });
+};
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
