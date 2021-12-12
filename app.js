@@ -6,7 +6,7 @@ const path = require("path");
 const fs = require("fs");
 const fse = require('fs-extra');
 
-const OUTPUT_DIR = path.resolve(__dirname, "output");
+const OUTPUT_DIR = path.resolve(__dirname, "teampage");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
@@ -107,6 +107,8 @@ const createEmployee = () => {
     })
     .catch(err => console.log(err))
 }
+
+createEmployee()
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
