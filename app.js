@@ -56,7 +56,7 @@ const createEmployee = () => {
       type: 'list',
       name: 'role',
       message: 'What is the role of your employee?',
-      choices: 'Intern', 'Engineer', 'Manager',
+      choices: ['Intern', 'Engineer', 'Manager',]
     }
   ])
     .then(answers => {
