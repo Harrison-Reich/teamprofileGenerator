@@ -83,7 +83,7 @@ const createEmployee = () => {
           }
         ])
           .then(engineer1 => {
-            const engineer = new Engineer(answers.name, answers.id, answers.email, "your github name")
+            const engineer = new Engineer(answers.name, answers.id, answers.email, engineer1.github)
             teamMembers.push(engineer)
             console.log(teamMembers)
             add()
