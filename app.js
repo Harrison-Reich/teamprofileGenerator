@@ -79,11 +79,13 @@ const createEmployee = () => {
           {
             type: 'input',
             name: 'github',
-            message: `What is the engineer's github page?`,
+            message: "What is the engineer's github page?",
           }
         ])
           .then(engineer1 => {
             const engineer = new Engineer(answers.name, answers.id, answers.email, engineer1.github)
+            console.log(engineer1.github)
+            console.log(engineer.getGithub())
             teamMembers.push(engineer)
             console.log(teamMembers)
             add()
