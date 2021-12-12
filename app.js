@@ -17,11 +17,11 @@ let teamMembers = []
 const add = () => {
   inquirer.prompt([
     {
-      name: 'add'
-      type: 'confirm'
+      name: 'add',
+      type: 'confirm',
       message: 'Would you like to create another employee profile?'
-    };
-  ]);
+    }
+  ])
     .then(data => {
       if (data.add === true) {
         createEmployee()
@@ -55,8 +55,8 @@ const createEmployee = () => {
     {
       type: 'list',
       name: 'role',
-      message: 'What is the role of your employee',
-      choices: 'Intern', 'Engineer', 'Manager'
+      message: 'What is the role of your employee?',
+      choices: 'Intern', 'Engineer', 'Manager',
     }
   ])
     .then(answers => {
@@ -79,7 +79,7 @@ const createEmployee = () => {
           {
             type: 'input',
             name: 'github',
-            message: 'What is the engineer github page?',
+            message: `What is the engineer's github page?`,
           }
         ])
           .then(engineer1 => {
