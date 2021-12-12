@@ -6,7 +6,7 @@ const path = require("path");
 const fs = require("fs");
 const fse = require('fs-extra');
 
-const OUTPUT_DIR = path.resolve(__dirname, "teampage");
+const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
@@ -28,7 +28,7 @@ const add = () => {
       } else {
         const team = render(teamMembers)
         render(teamMembers)
-        fse.outputFile('display.team.html', team, err => {
+        fse.outputFile('output/team.html', team, err => {
           if (err) { console.log(err) }
         });
       };
@@ -83,7 +83,7 @@ const createEmployee = () => {
           }
         ])
           .then(engineer1 => {
-            const engineer = new Engineer(answers.name, answers.id, answers.email, engineer1.github)
+            const engineer = new Engineer(answers.name, answers.id, answers.email, "your github name")
             teamMembers.push(engineer)
             console.log(teamMembers)
             add()
