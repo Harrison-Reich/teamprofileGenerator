@@ -49,4 +49,4 @@
 
   Email: hreich1998@gmail.com
 
-  <img src = "https://user-images.githubusercontent.com/91640571/145536333-0cb34d6d-b49a-45b6-8774-874f984c545f.png" alt="example reference photo">
+  <img src = "https://user-images.githubusercontent.com/93016157/145735493-2ee6c507-a7b3-48e2-aa94-8bfb8b1cd455.png" alt="example reference photo">
